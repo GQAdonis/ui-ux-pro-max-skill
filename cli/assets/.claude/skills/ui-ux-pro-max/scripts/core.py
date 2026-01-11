@@ -67,7 +67,8 @@ STACK_CONFIG = {
     "svelte": {"file": "stacks/svelte.csv"},
     "swiftui": {"file": "stacks/swiftui.csv"},
     "react-native": {"file": "stacks/react-native.csv"},
-    "flutter": {"file": "stacks/flutter.csv"}
+    "flutter": {"file": "stacks/flutter.csv"},
+    "shadcn": {"file": "stacks/shadcn.csv"}
 }
 
 # Common columns for all stacks
