@@ -21,6 +21,7 @@ uipro init --ai antigravity # Antigravity
 uipro init --ai copilot     # GitHub Copilot
 uipro init --ai kiro        # Kiro
 uipro init --ai codex       # Codex (Skills)
+uipro init --ai opencode    # OpenCode (Skills) + .shared dataset
 uipro init --ai roocode     # Roo Code
 uipro init --ai qoder       # Qoder
 uipro init --ai gemini      # Gemini CLI

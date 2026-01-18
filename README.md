@@ -176,6 +176,7 @@ uipro init --ai antigravity # Antigravity (.agent + .shared)
 uipro init --ai copilot     # GitHub Copilot
 uipro init --ai kiro        # Kiro
 uipro init --ai codex       # Codex CLI
+uipro init --ai opencode    # OpenCode (.opencode + .shared)
 uipro init --ai qoder       # Qoder
 uipro init --ai roocode     # Roo Code
 uipro init --ai gemini      # Gemini CLI
@@ -204,6 +205,7 @@ Copy the appropriate folders to your project:
 | GitHub Copilot | `.github/prompts/ui-ux-pro-max.prompt.md` + `.shared/ui-ux-pro-max/` |
 | Kiro           | `.kiro/steering/ui-ux-pro-max.md` + `.shared/ui-ux-pro-max/`         |
 | Codex CLI      | `.codex/skills/ui-ux-pro-max/`                                       |
+| OpenCode       | `.opencode/skills/ui-ux-pro-max/` + `.shared/ui-ux-pro-max/`         |
 | Qoder          | `.qoder/skills/ui-ux-pro-max.md` + `.shared/ui-ux-pro-max/`          |
 | Roo Code       | `.roo/rules/ui-ux-pro-max.md` + `.shared/ui-ux-pro-max/`             |
 | Gemini CLI     | `.gemini/skills/ui-ux-pro-max/` + `.shared/ui-ux-pro-max/`           |
@@ -268,6 +270,16 @@ The skill activates automatically for UI/UX requests. You can also invoke it exp
 ```
 $ui-ux-pro-max Build a landing page for my SaaS product
 ```
+
+### OpenCode
+
+The skill activates automatically when you request UI/UX work. Skills are loaded on-demand via OpenCode's native `skill` tool:
+
+```
+Build a landing page for my SaaS product
+```
+
+**Note**: If the skill doesn't appear, check your `opencode.json` permissions. Skills can be hidden via `permission.skill` settings.
 
 ### Qoder
 

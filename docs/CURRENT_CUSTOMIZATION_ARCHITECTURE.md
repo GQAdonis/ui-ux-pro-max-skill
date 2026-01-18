@@ -57,7 +57,7 @@ CSV_CONFIG = {
 - **Priority-Based Selection**: Weighted matching based on product category and style preferences
 
 #### Stack-Specific Guidelines (`data/stacks/`)
-- **12 Supported Platforms**: React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, etc.
+- **13 Supported Platforms**: React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, HTMX+Alpine.js+Axum, Tauri, etc.
 - **Consistent Structure**: All stacks follow same CSV schema with 9 columns
 - **Extensible Framework**: Easy addition of new platforms through CSV files
 
@@ -856,10 +856,30 @@ class ExtensionManager:
 ```yaml
 # GitHub Actions example
 - name: Validate UI/UX Guidelines
-  run: python3 .claude/skills/ui-ux-pro-max/scripts/validate_guidelines.py
+  run: python3 .shared/ui-ux-pro-max/scripts/validate_guidelines.py
 ```
 
 ### 2. IDE Integration
+
+**Supported AI Assistants:**
+- Claude Code (`.claude/skills/`)
+- Cursor (`.cursor/commands/`)
+- Windsurf (`.windsurf/workflows/`)
+- Antigravity (`.agent/workflows/`)
+- GitHub Copilot (`.github/prompts/`)
+- Kiro (`.kiro/steering/`)
+- Codex (`.codex/skills/`)
+- OpenCode (`.opencode/skills/`)
+- Qoder (`.qoder/skills/`)
+- RooCode (`.roo/commands/`)
+- Gemini CLI (`.gemini/skills/`)
+- Trae (`.trae/skills/`)
+
+**OpenCode-Specific Notes:**
+- Skills are loaded on-demand via the native `skill` tool
+- Frontmatter `description` must be ≤ 1024 characters
+- Skills can be hidden via `opencode.json` permissions (`permission.skill`)
+
 ```json
 // VS Code settings.json
 {
@@ -872,7 +892,7 @@ class ExtensionManager:
 ### 3. Design System Export
 ```bash
 # Generate design system for external tools
-python3 .claude/skills/ui-ux-pro-max/scripts/export.py \
+python3 .shared/ui-ux-pro-max/scripts/export.py \
   --format figma-tokens \
   --output design-tokens.json
 ```

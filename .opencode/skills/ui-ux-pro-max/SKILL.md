@@ -1,6 +1,6 @@
 ---
 name: ui-ux-pro-max
-description: "Advanced UI/UX design intelligence with customization architecture. 50+ styles, 21 palettes, 50+ font pairings, 20+ charts, 47 AI chat patterns, 24 architecture patterns, 11 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui, HTMX, Tauri). External config support with brand integration. A2UI cross-platform export. Actions: plan, build, create, design, implement, review, fix, improve, optimize, enhance, refactor, check UI/UX code. Projects: website, landing page, dashboard, admin panel, e-commerce, SaaS, portfolio, blog, mobile app, .html, .tsx, .vue, .svelte. Elements: button, modal, navbar, sidebar, card, table, form, chart, AI chat interface. Styles: glassmorphism, claymorphism, minimalism, brutalism, neumorphism, bento grid, dark mode, responsive, skeuomorphism, flat design. Topics: color palette, accessibility, animation, layout, typography, font pairing, spacing, hover, shadow, gradient, AI interface design, clean architecture."
+description: "UI/UX design intelligence toolkit: styles, color palettes, typography, UX guidelines, AI chat patterns, and architecture patterns. Use it to design/build/review interfaces and generate a consistent design system."
 ---
 
 # UI/UX Pro Max - Design Intelligence
@@ -139,7 +139,7 @@ Extract key information from user request:
 **Always start with `--design-system`** to get comprehensive recommendations with reasoning:
 
 ```bash
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "<product_type> <industry> <keywords>" --design-system [-p "Project Name"]
+python3 .shared/ui-ux-pro-max/scripts/search.py "<product_type> <industry> <keywords>" --design-system [-p "Project Name"]
 ```
 
 This command:
@@ -150,7 +150,7 @@ This command:
 
 **Example:**
 ```bash
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "beauty spa wellness service" --design-system -p "Serenity Spa"
+python3 .shared/ui-ux-pro-max/scripts/search.py "beauty spa wellness service" --design-system -p "Serenity Spa"
 ```
 
 ### Step 3: Supplement with Detailed Searches (as needed)
@@ -158,7 +158,7 @@ python3 .claude/skills/ui-ux-pro-max/scripts/search.py "beauty spa wellness serv
 After getting the design system, use domain searches to get additional details:
 
 ```bash
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "<keyword>" --domain <domain> [-n <max_results>]
+python3 .shared/ui-ux-pro-max/scripts/search.py "<keyword>" --domain <domain> [-n <max_results>]
 ```
 
 **When to use detailed searches:**
@@ -178,7 +178,7 @@ python3 .claude/skills/ui-ux-pro-max/scripts/search.py "<keyword>" --domain <dom
 Get implementation-specific best practices. If user doesn't specify a stack, **default to `html-tailwind`**.
 
 ```bash
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "<keyword>" --stack html-tailwind
+python3 .shared/ui-ux-pro-max/scripts/search.py "<keyword>" --stack html-tailwind
 ```
 
 Available stacks: `html-tailwind`, `react`, `nextjs`, `vue`, `svelte`, `swiftui`, `react-native`, `flutter`, `shadcn`, `jetpack-compose`, `htmx-alpine-axum`, `tauri`
@@ -236,7 +236,7 @@ Available stacks: `html-tailwind`, `react`, `nextjs`, `vue`, `svelte`, `swiftui`
 ### Step 2: Generate Design System (REQUIRED)
 
 ```bash
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "beauty spa wellness service elegant" --design-system -p "Serenity Spa"
+python3 .shared/ui-ux-pro-max/scripts/search.py "beauty spa wellness service elegant" --design-system -p "Serenity Spa"
 ```
 
 **Output:** Complete design system with pattern, style, colors, typography, effects, and anti-patterns.
@@ -245,29 +245,29 @@ python3 .claude/skills/ui-ux-pro-max/scripts/search.py "beauty spa wellness serv
 
 ```bash
 # Get UX guidelines for animation and accessibility
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "animation accessibility" --domain ux
+python3 .shared/ui-ux-pro-max/scripts/search.py "animation accessibility" --domain ux
 
 # Get alternative typography options if needed
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "elegant luxury serif" --domain typography
+python3 .shared/ui-ux-pro-max/scripts/search.py "elegant luxury serif" --domain typography
 ```
 
 ### Step 4: Stack Guidelines
 
 ```bash
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "layout responsive form" --stack html-tailwind
+python3 .shared/ui-ux-pro-max/scripts/search.py "layout responsive form" --stack html-tailwind
 ```
 
 **Step 5: Advanced Features (as needed)**
 
 ```bash
 # For AI chat interfaces
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "streaming response citations" --domain ai-chat
+python3 .shared/ui-ux-pro-max/scripts/search.py "streaming response citations" --domain ai-chat
 
 # For clean architecture
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "feature-based structure" --domain architecture
+python3 .shared/ui-ux-pro-max/scripts/search.py "feature-based structure" --domain architecture
 
 # Export for cross-platform use
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "beauty spa wellness" --export-a2ui --export-targets react vue
+python3 .shared/ui-ux-pro-max/scripts/search.py "beauty spa wellness" --export-a2ui --export-targets react vue
 ```
 
 **Then:** Synthesize design system + detailed searches and implement the design.
@@ -280,10 +280,10 @@ The `--design-system` flag supports two output formats:
 
 ```bash
 # ASCII box (default) - best for terminal display
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "fintech crypto" --design-system
+python3 .shared/ui-ux-pro-max/scripts/search.py "fintech crypto" --design-system
 
 # Markdown - best for documentation
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "fintech crypto" --design-system -f markdown
+python3 .shared/ui-ux-pro-max/scripts/search.py "fintech crypto" --design-system -f markdown
 ```
 
 ---
@@ -310,10 +310,10 @@ Customize the skill with your own brand colors, domain patterns, and stack guide
 mkdir .ui-ux-pro-max-config
 
 # Search with brand integration
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "dashboard design" --apply-brand --config-path .ui-ux-pro-max-config/
+python3 .shared/ui-ux-pro-max/scripts/search.py "dashboard design" --apply-brand --config-path .ui-ux-pro-max-config/
 
 # Check configuration status
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "test" --config-status --config-path .ui-ux-pro-max-config/
+python3 .shared/ui-ux-pro-max/scripts/search.py "test" --config-status --config-path .ui-ux-pro-max-config/
 ```
 
 **External Configuration Structure:**
@@ -348,13 +348,13 @@ Export design recommendations as A2UI protocol for cross-platform code generatio
 
 ```bash
 # Export search results as A2UI JSON
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "button design" --export-a2ui
+python3 .shared/ui-ux-pro-max/scripts/search.py "button design" --export-a2ui
 
 # Export with specific targets
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "dashboard layout" --export-a2ui --export-targets react vue flutter
+python3 .shared/ui-ux-pro-max/scripts/search.py "dashboard layout" --export-a2ui --export-targets react vue flutter
 
 # Save to file
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "card design" --export-a2ui --export-file design-system.json
+python3 .shared/ui-ux-pro-max/scripts/search.py "card design" --export-a2ui --export-file design-system.json
 ```
 
 **A2UI Export includes:**
@@ -372,13 +372,13 @@ Search specialized patterns for AI chat interfaces and conversational UIs:
 
 ```bash
 # Get streaming text patterns
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "streaming response" --domain ai-chat
+python3 .shared/ui-ux-pro-max/scripts/search.py "streaming response" --domain ai-chat
 
 # Find citation and reference patterns
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "citations sources" --domain ai-chat
+python3 .shared/ui-ux-pro-max/scripts/search.py "citations sources" --domain ai-chat
 
 # Get multi-modal input patterns
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "voice upload" --domain ai-chat
+python3 .shared/ui-ux-pro-max/scripts/search.py "voice upload" --domain ai-chat
 ```
 
 **Available AI Chat Patterns (47 total):**
@@ -397,13 +397,13 @@ Search architectural patterns for clean, maintainable codebases:
 
 ```bash
 # Get feature-based architecture patterns
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "feature slice" --domain architecture
+python3 .shared/ui-ux-pro-max/scripts/search.py "feature slice" --domain architecture
 
 # Find domain-driven design patterns
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "domain entity" --domain architecture
+python3 .shared/ui-ux-pro-max/scripts/search.py "domain entity" --domain architecture
 
 # Get component architecture patterns
-python3 .claude/skills/ui-ux-pro-max/scripts/search.py "component composition" --domain architecture
+python3 .shared/ui-ux-pro-max/scripts/search.py "component composition" --domain architecture
 ```
 
 **Available Architecture Categories:**

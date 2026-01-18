@@ -1,4 +1,4 @@
-export type AIType = 'claude' | 'cursor' | 'windsurf' | 'antigravity' | 'copilot' | 'kiro' | 'roocode' | 'codex' | 'qoder' | 'gemini' | 'trae' | 'all';
+export type AIType = 'claude' | 'cursor' | 'windsurf' | 'antigravity' | 'copilot' | 'kiro' | 'roocode' | 'codex' | 'opencode' | 'qoder' | 'gemini' | 'trae' | 'all';
 
 export interface Release {
   tag_name: string;
@@ -20,7 +20,7 @@ export interface InstallConfig {
   force?: boolean;
 }
 
-export const AI_TYPES: AIType[] = ['claude', 'cursor', 'windsurf', 'antigravity', 'copilot', 'roocode', 'kiro', 'codex', 'qoder', 'gemini', 'trae', 'all'];
+export const AI_TYPES: AIType[] = ['claude', 'cursor', 'windsurf', 'antigravity', 'copilot', 'roocode', 'kiro', 'codex', 'opencode', 'qoder', 'gemini', 'trae', 'all'];
 
 export const AI_FOLDERS: Record<Exclude<AIType, 'all'>, string[]> = {
   claude: ['.claude'],
@@ -30,6 +30,9 @@ export const AI_FOLDERS: Record<Exclude<AIType, 'all'>, string[]> = {
   copilot: ['.github', '.shared'],
   kiro: ['.kiro', '.shared'],
   codex: ['.codex'],
+  // OpenCode skills live under `.opencode/skills/`, but we also install `.shared/`
+  // so the skill can reference a consistent, cross-assistant search CLI + dataset.
+  opencode: ['.opencode', '.shared'],
   roocode: ['.roo', '.shared'],
   qoder: ['.qoder', '.shared'],
   gemini: ['.gemini', '.shared'],

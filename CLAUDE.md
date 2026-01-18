@@ -40,10 +40,15 @@ Available stacks: `html-tailwind` (default), `react`, `nextjs`, `vue`, `svelte`,
     └── stacks/                   # Stack-specific guidelines (8 CSV files)
 
 .opencode/skills/ui-ux-pro-max/   # OpenCode skill
+.cursor/commands/                 # Cursor command
 .windsurf/workflows/              # Windsurf workflow copy
 .agent/workflows/ui-ux-pro-max/   # Generic agent workflow copy
 .github/prompts/                  # GitHub Copilot prompt
 .kiro/steering/                   # Kiro steering file
+.codex/skills/ui-ux-pro-max/      # Codex skill
+.qoder/skills/                    # Qoder skill
+.roo/commands/                    # RooCode command
+.gemini/skills/ui-ux-pro-max/     # Gemini CLI skill
 .trae/skills/ui-ux-pro-max/       # Trae skill copy
 .shared/ui-ux-pro-max/            # Shared data copy
 ```
@@ -55,8 +60,8 @@ The search engine uses BM25 ranking combined with regex matching. Domain auto-de
 When modifying files, keep all agent workflows in sync:
 
 - **Data & Scripts** (`data/`, `scripts/`): Copy changes to `.shared/ui-ux-pro-max/` and `cli/assets/.shared/ui-ux-pro-max/`
-- **SKILL.md**: Update corresponding files in `.agent/`, `.cursor/`, `.windsurf/`, `.github/prompts/`, `.kiro/steering/`, `.trae/skills/`, `.opencode/skills/`
-- **CLI assets**: Copy all skill folders to `cli/assets/` (`.claude/`, `.cursor/`, `.windsurf/`, `.agent/`, `.github/`, `.kiro/`, `.trae/`, `.shared/`)
+- **SKILL.md**: Update corresponding files in `.agent/`, `.cursor/`, `.windsurf/`, `.github/prompts/`, `.kiro/steering/`, `.codex/`, `.opencode/skills/`, `.qoder/`, `.roo/`, `.gemini/`, `.trae/skills/`
+- **CLI assets**: Copy all skill folders to `cli/assets/` (`.claude/`, `.cursor/`, `.windsurf/`, `.agent/`, `.github/`, `.kiro/`, `.codex/`, `.opencode/`, `.qoder/`, `.roo/`, `.gemini/`, `.trae/`, `.shared/`)
 
 ## Prerequisites
 

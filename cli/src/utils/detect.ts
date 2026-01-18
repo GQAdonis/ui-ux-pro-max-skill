@@ -31,6 +31,9 @@ export function detectAIType(cwd: string = process.cwd()): DetectionResult {
   if (existsSync(join(cwd, '.codex'))) {
     detected.push('codex');
   }
+  if (existsSync(join(cwd, '.opencode'))) {
+    detected.push('opencode');
+  }
   if (existsSync(join(cwd, '.roo'))) {
     detected.push('roocode');
   }
@@ -72,6 +75,8 @@ export function getAITypeDescription(aiType: AIType): string {
       return 'Kiro (.kiro/steering/ + .shared/)';
     case 'codex':
       return 'Codex (.codex/skills/)';
+    case 'opencode':
+      return 'OpenCode (.opencode/skills/ + .shared/)';
     case 'roocode':
       return 'RooCode (.roo/commands/ + .shared/)';
     case 'qoder':
